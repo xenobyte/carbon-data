@@ -1069,7 +1069,7 @@ public class RDBMSDataHandler implements ODataDataHandler {
         ResultSet resultSet = null;
         List<String> keys = new ArrayList<>();
         try {
-            resultSet = metaData.getPrimaryKeys(catalog, null, tableName);
+            resultSet = metaData.getPrimaryKeys(catalog, "", tableName);
             while (resultSet.next()) {
                 String primaryKey = resultSet.getString("COLUMN_NAME");
                 keys.add(primaryKey);
